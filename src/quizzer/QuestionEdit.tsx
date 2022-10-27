@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { Question, QuestionType } from "../interfaces/question";
-
+import { Button, Form } from "react-bootstrap";
+import { Question } from "../interfaces/question";
 import "./QuestionEdit.css";
 
 export const QuestionEdit = ({
@@ -10,7 +10,15 @@ export const QuestionEdit = ({
     editQuestion,
     removeQuestion,
     swapQuestion
-}: {}) => {
+}: {
+    index: number;
+    lastIndex: number;
+    question: Question; 
+    editQuestion: (qID: number, q: Question)=> void;
+    removeQuestion: (qID: number) => void;
+    swapQuestion: (ind: number, ind2: number) => void;
+
+}) => {
     const [a, b] = useState<number>(
         question.options.findIndex((s: string) => question.expected === s)
     );
@@ -27,7 +35,7 @@ export const QuestionEdit = ({
         });
     };
 
-    const switchMulti = () => {
+    const handleSwitch = () => {
         b(0);
         editQuestion(question.id, {
             ...question,

@@ -6,8 +6,11 @@ import { Question } from "../interfaces/question";
 
 export const QuizCard = ({
     quiz,
-    handleClick
-}: {) => {
+    handleClick, 
+}: {
+    quiz: Quiz;
+    handleClick: (num: number) => void;
+}) => {
     const filteredQuestions = quiz.questionList.filter(
         (q: Question): boolean =>
             (quiz.published && q.published) || !quiz.published

@@ -12,7 +12,15 @@ export const QuizQuestion = ({
     handleSubmit,
     addPoints,
     editQuestionSub
-}: {}) => {
+}: {
+    index: number; 
+    question: Question;
+    submitted: boolean;
+    handleSubmit: (num: number) => void;
+    addPoints: (num: number) => void;
+    editQuestionSub: (num: number, str: string) => void;
+
+}) => {
     const handleClick = (e: ChangeEvent) => {
         if (!submitted) {
             editQuestionSub(question.id, e.target.value);
@@ -53,7 +61,7 @@ export const QuizQuestion = ({
                             {question.options.map(
                                 (option: string, i: number) => (
                                     <Form.Check
-                                        type=""
+                                        type= "checkbox"
                                         name={"questionChoice" + index}
                                         key={option + " | " + i}
                                         label={option}
