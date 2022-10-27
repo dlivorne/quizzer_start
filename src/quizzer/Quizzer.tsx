@@ -6,7 +6,6 @@ import { AddQuizModal } from "./AddQuizModal";
 
 import "./Quizzer.css";
 import sample from "../data/quizzes.json";
-import { idText } from "typescript";
 
 const QUIZZES = sample.map(
     (quiz): Quiz => ({
