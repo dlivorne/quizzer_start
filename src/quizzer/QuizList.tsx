@@ -53,7 +53,10 @@ export const QuizList = ({
                             deleteQuiz={deleteQuiz}
                             resetView={resetQuizView}
                         ></QuizView>
-                    );
+                        );
+                }
+                else{
+                    return (<div></div>);
                 }
             })}
         </div>
