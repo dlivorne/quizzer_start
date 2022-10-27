@@ -11,7 +11,7 @@ export const QuizView = ({
     deleteQuiz,
     resetView
 }: {quiz: Quiz;
-    editQuiz: (qID: number, q: Quiz)=> void;
+    editQuiz: (qID: number, q2: Quiz)=> void;
     deleteQuiz: (qID: number) => void;
     resetView: () => void;
 }) => {
